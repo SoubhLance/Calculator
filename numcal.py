@@ -1,4 +1,5 @@
 import tkinter as tk
+from math import *
 from tkinter.messagebox import askyesno
 
 
@@ -39,20 +40,22 @@ def Confirm():
 
 #GUI
 root=tk.Tk()
-root.geometry("400x395")
+root.geometry("600x392")
 root.title("Calculator")
 root.resizable(0,0)
 
 text_result= tk.Text(root,height=2,width=22,font=("Arial",24))
 text_result.grid(columnspan=5)
 
+
+#Buttons
 btn_1 = tk.Button(root,text="1", command=lambda: add_to_calculation(1), width=8, height=2, font=("Arial",14))
 btn_1.grid(row=2, column=0)
 btn_2 = tk.Button(root,text="2", command=lambda: add_to_calculation(2), width=8, height=2, font=("Arial",14))
 btn_2.grid(row=2, column=1)
 btn_3 = tk.Button(root,text="3", command=lambda: add_to_calculation(3), width=8, height=2, font=("Arial",14))
 btn_3.grid(row=2, column=2)
-btn_4 = tk.Button(root,text="4", command=lambda: add_to_calculation(3), width=8, height=2, font=("Arial",14))
+btn_4 = tk.Button(root,text="4", command=lambda: add_to_calculation(4), width=8, height=2, font=("Arial",14))
 btn_4.grid(row=3, column=0)
 btn_5 = tk.Button(root,text="5", command=lambda: add_to_calculation(5), width=8, height=2, font=("Arial",14))
 btn_5.grid(row=3, column=1)
@@ -84,7 +87,28 @@ btn_equals = tk.Button(root,text="=", command=evaluate_calculation, width=17, he
 btn_equals.grid(row=5,column=2,columnspan=2)
 btn_clear = tk.Button(root,text="C", command=clear_field, width=8, height=2, font=("Arial",14),foreground="white",background="red",relief="groove")
 btn_clear.grid(row=1,column=0)
-
+btn_pi= tk.Button(root,text="π", command=lambda: add_to_calculation(3.14), width=8, height=2, font=("Arial",14))
+btn_pi.grid(row=2, column=5)
+btn_exp= tk.Button(root,text="exp", command=lambda: add_to_calculation("**"), width=8, height=2, font=("Arial",14))
+btn_exp.grid(row=4, column=6)
+btn_per= tk.Button(root,text="%", command=lambda: add_to_calculation(3.14), width=8, height=2, font=("Arial",14))
+btn_per.grid(row=4, column=5)
+btn_sin= tk.Button(root,text="sin", command=lambda: add_to_calculation("sin"), width=8, height=2, font=("Arial",14))
+btn_sin.grid(row=2, column=5)
+btn_cos= tk.Button(root,text="cos", command=lambda: add_to_calculation("cos"), width=8, height=2, font=("Arial",14))
+btn_cos.grid(row=3, column=5)
+btn_tan= tk.Button(root,text="tan", command=lambda: add_to_calculation("tan"), width=8, height=2, font=("Arial",14))
+btn_tan.grid(row=1, column=5)
+btn_sin1= tk.Button(root,text="cosec", command=lambda: add_to_calculation("cosec"), width=8, height=2, font=("Arial",14))
+btn_sin1.grid(row=2, column=6)
+btn_cos1= tk.Button(root,text="sec", command=lambda: add_to_calculation("sec"), width=8, height=2, font=("Arial",14))
+btn_cos1.grid(row=3, column=6)
+btn_tan1= tk.Button(root,text="cot", command=lambda: add_to_calculation("cot"), width=8, height=2, font=("Arial",14))
+btn_tan1.grid(row=1, column=6)
+btn_log= tk.Button(root,text="log10", command=lambda: add_to_calculation("log"), width=8, height=2, font=("Arial",14))
+btn_log.grid(row=0, column=5)
+btn_sq= tk.Button(root,text="^2", command=lambda: add_to_calculation("**2"), width=8, height=2, font=("Arial",14))
+btn_sq.grid(row=0, column=6)
 
 
 root.protocol("WM_DELETE_WINDOW",Confirm)

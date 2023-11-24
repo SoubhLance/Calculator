@@ -1,6 +1,7 @@
 import tkinter as tk
 from math import *
 from tkinter.messagebox import askyesno
+import tkinter.messagebox as tmsg
 
 
 calculation=""
@@ -36,48 +37,68 @@ def Confirm():
     if ans:
         root.destroy()
 
+def about_me():
+    tmsg.showinfo('About Project','This is a scientific Calculator created using Tkinter and python')
 
+def send_feedback():
+    ans = tmsg.askquestion('Feedback', 'Was your experience good with it?')
+    if ans == 'yes':
+        tmsg.showinfo('Feedback','Thanks for Your feedback')
+    else:
+        tmsg.showinfo('Feedback','Please Specify where it was wrong')
+        tmsg.showinfo('Feedback','Email Me at studysadhu2022@gmail.com')
+        
 
 #GUI
 root=tk.Tk()
-root.geometry("600x392")
+root.geometry("612x400")
 root.title("Calculator")
 root.resizable(0,0)
+root.configure(bg="light grey")
 
 
-text_result= tk.Text(root,height=2,width=22,font=("Arial",24))
+text_result= tk.Text(root,height=2,width=22,font=("Arial",24),relief="groove", fg='black', bg='white', borderwidth=5)
 text_result.grid(columnspan=5)
 
+#Menu
+my_menu = tk.Menu(root)
+m1 = tk.Menu(my_menu, tearoff=0, fg='blue')
+m1.add_command(label = 'About Project', command = about_me)
+m1.add_command(label = 'Send Feedback', command = send_feedback)
+ 
+root.config(menu=my_menu)
+my_menu.add_cascade(label='About', menu=m1)
+my_menu.add_command(label='Exit', command=quit)
 
 
 #Buttons
-btn_1 = tk.Button(root,text="1", command=lambda: add_to_calculation(1), width=8, height=2, font=("Arial",14),foreground="black",background="orange")
+btn_1 = tk.Button(root,text="1", command=lambda: add_to_calculation(1), width=8, height=2, font=("Arial",14),foreground="black",background="sky blue")
 btn_1.grid(row=2, column=0)
-btn_2 = tk.Button(root,text="2", command=lambda: add_to_calculation(2), width=8, height=2, font=("Arial",14),foreground="black",background="orange")
+btn_2 = tk.Button(root,text="2", command=lambda: add_to_calculation(2), width=8, height=2, font=("Arial",14),foreground="black",background="sky blue")
 btn_2.grid(row=2, column=1)
-btn_3 = tk.Button(root,text="3", command=lambda: add_to_calculation(3), width=8, height=2, font=("Arial",14),foreground="black",background="orange")
+btn_3 = tk.Button(root,text="3", command=lambda: add_to_calculation(3), width=8, height=2, font=("Arial",14),foreground="black",background="sky blue")
 btn_3.grid(row=2, column=2)
-btn_4 = tk.Button(root,text="4", command=lambda: add_to_calculation(4), width=8, height=2, font=("Arial",14),foreground="black",background="orange")
+btn_4 = tk.Button(root,text="4", command=lambda: add_to_calculation(4), width=8, height=2, font=("Arial",14),foreground="black",background="sky blue")
 btn_4.grid(row=3, column=0)
-btn_5 = tk.Button(root,text="5", command=lambda: add_to_calculation(5), width=8, height=2, font=("Arial",14),foreground="black",background="orange")
+btn_5 = tk.Button(root,text="5", command=lambda: add_to_calculation(5), width=8, height=2, font=("Arial",14),foreground="black",background="sky blue")
 btn_5.grid(row=3, column=1)
-btn_6 = tk.Button(root,text="6", command=lambda: add_to_calculation(6), width=8, height=2, font=("Arial",14),foreground="black",background="orange")
+btn_6 = tk.Button(root,text="6", command=lambda: add_to_calculation(6), width=8, height=2, font=("Arial",14),foreground="black",background="sky blue")
 btn_6.grid(row=3, column=2)
-btn_7 = tk.Button(root,text="7", command=lambda: add_to_calculation(7), width=8, height=2, font=("Arial",14),foreground="black",background="orange")
+btn_7 = tk.Button(root,text="7", command=lambda: add_to_calculation(7), width=8, height=2, font=("Arial",14),foreground="black",background="sky blue")
 btn_7.grid(row=4, column=0)
-btn_8 = tk.Button(root,text="8", command=lambda: add_to_calculation(8), width=8, height=2, font=("Arial",14),foreground="black",background="orange")
+btn_8 = tk.Button(root,text="8", command=lambda: add_to_calculation(8), width=8, height=2, font=("Arial",14),foreground="black",background="sky blue")
 btn_8.grid(row=4, column=1)
-btn_9 = tk.Button(root,text="9", command=lambda: add_to_calculation(9), width=8, height=2, font=("Arial",14),foreground="black",background="orange")
+btn_9 = tk.Button(root,text="9", command=lambda: add_to_calculation(9), width=8, height=2, font=("Arial",14),foreground="black",background="sky blue")
 btn_9.grid(row=4, column=2)
-btn_0 = tk.Button(root,text="0", command=lambda: add_to_calculation(0), width=8, height=2, font=("Arial",14),padx=2,pady=6,foreground="black",background="orange")
+btn_0 = tk.Button(root,text="0", command=lambda: add_to_calculation(0), width=8, height=2, font=("Arial",14),padx=2,pady=6,foreground="black",background="sky blue")
 btn_0.grid(row=5, column=1)
-btn_plus = tk.Button(root,text="+", command=lambda: add_to_calculation("+"), width=8, height=2, font=("Arial",14),foreground="black",background="lime")
+btn_plus = tk.Button(root,text="+", command=lambda: add_to_calculation("+"), width=8, height=2, font=("Arial",14),foreground="black",background="light blue")
 btn_plus.grid(row=4,column=3)
-btn_minus = tk.Button(root,text="-", command=lambda: add_to_calculation("-"), width=8, height=2, font=("Arial",14),foreground="black",background="lime")
+btn_minus = tk.Button(root,text="-", command=lambda: add_to_calculation("-"), width=8, height=2, font=("Arial",14),foreground="black",background="light blue")
 btn_minus.grid(row=3,column=3)
-btn_mul = tk.Button(root,text="*", command=lambda: add_to_calculation("*"), width=8, height=2, font=("Arial",14),foreground="black",background="lime")
+btn_mul = tk.Button(root,text="*", command=lambda: add_to_calculation("*"), width=8, height=2, font=("Arial",14),foreground="black",background="light blue")
 btn_mul.grid(row=2,column=3)
-btn_div = tk.Button(root,text="/", command=lambda: add_to_calculation("/"), width=8, height=2, font=("Arial",14),foreground="black",background="lime")
+btn_div = tk.Button(root,text="/", command=lambda: add_to_calculation("/"), width=8, height=2, font=("Arial",14),foreground="black",background="light blue")
 btn_div.grid(row=1,column=3)
 btn_open = tk.Button(root,text="(", command=lambda: add_to_calculation("("), width=8, height=2, font=("Arial",14),foreground="black",background="light blue")
 btn_open.grid(row=1,column=1)
@@ -105,13 +126,13 @@ btn_cos1= tk.Button(root,text="sec", command=lambda: add_to_calculation("sec"), 
 btn_cos1.grid(row=3, column=6)
 btn_tan1= tk.Button(root,text="cot", command=lambda: add_to_calculation("cot"), width=8, height=2, font=("Arial",14),foreground="black",background="light grey")
 btn_tan1.grid(row=1, column=6)
-btn_log= tk.Button(root,text="log10", command=lambda: add_to_calculation("log"), width=8, height=2, font=("Arial",14),foreground="black",background="light grey")
+btn_log= tk.Button(root,text="log10", command=lambda: add_to_calculation("log"), width=8, height=2, font=("Arial",14),foreground="black",background="light grey",padx=2,pady=8)
 btn_log.grid(row=0, column=5)
-btn_sq= tk.Button(root,text="^2", command=lambda: add_to_calculation("**2"), width=8, height=2, font=("Arial",14),foreground="black",background="light grey")
+btn_sq= tk.Button(root,text="^2", command=lambda: add_to_calculation("**2"), width=8, height=2, font=("Arial",14),foreground="black",background="light grey",padx=2,pady=8)
 btn_sq.grid(row=0, column=6)
-btn_sqroot= tk.Button(root,text="√", command=lambda: add_to_calculation("**0.5"), width=8, height=2, font=("Arial",14),foreground="black",background="light grey")
+btn_sqroot= tk.Button(root,text="√", command=lambda: add_to_calculation("**0.5"), width=8, height=2, font=("Arial",14),foreground="black",background="light grey",padx=2,pady=6)
 btn_sqroot.grid(row=5, column=5)
-btn_pi= tk.Button(root,text="π", command=lambda: add_to_calculation(3.14), width=8, height=2, font=("Arial",14),foreground="black",background="light grey")
+btn_pi= tk.Button(root,text="π", command=lambda: add_to_calculation(3.14), width=8, height=2, font=("Arial",14),foreground="black",background="light grey",padx=2,pady=6)
 btn_pi.grid(row=5, column=6)
 
 

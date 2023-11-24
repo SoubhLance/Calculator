@@ -49,6 +49,9 @@ def send_feedback():
         tmsg.showinfo('Feedback','Email Me at studysadhu2022@gmail.com')
         
 
+
+
+
 #GUI
 root=tk.Tk()
 root.geometry("612x400")
@@ -57,7 +60,7 @@ root.resizable(0,0)
 root.configure(bg="light grey")
 
 
-text_result= tk.Text(root,height=2,width=22,font=("Arial",24),relief="groove", fg='black', bg='white', borderwidth=5)
+text_result= tk.Text(root,height=2,width=22,font=("Lucida 35 bold",24),relief="groove", fg='black', bg='white', borderwidth=5)
 text_result.grid(columnspan=5)
 
 #Menu

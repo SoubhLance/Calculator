@@ -2,6 +2,7 @@ import tkinter as tk
 from math import *
 from tkinter.messagebox import askyesno
 import tkinter.messagebox as tmsg
+import webbrowser
 
 
 calculation=""
@@ -47,7 +48,7 @@ def send_feedback():
     else:
         tmsg.showinfo('Feedback','Please Specify where it was wrong')
         tmsg.showinfo('Feedback','Email Me at studysadhu2022@gmail.com')
-        
+        webbrowser.open("www.gmail.com")
 
 
 

@@ -106,7 +106,7 @@ btn_div = tk.Button(root,text="/", command=lambda: add_to_calculation("/"), widt
 btn_div.grid(row=1,column=3)
 btn_open = tk.Button(root,text="(", command=lambda: add_to_calculation("("), width=8, height=2, font=("Arial",14),foreground="black",background="light blue")
 btn_open.grid(row=1,column=1)
-btn_dot = tk.Button(root,text=".", command=lambda: add_to_calculation("."), width=8, height=2, font=("Arial",14),padx=2,pady=6,foreground="black",background="yellow")
+btn_dot = tk.Button(root,text=".", command=lambda: add_to_calculation("."), width=8, height=2, font=("Arial",14),padx=2,pady=6,foreground="black",background="grey")
 btn_dot.grid(row=5,column=0)
 btn_close = tk.Button(root,text=")", command=lambda: add_to_calculation(")"), width=8, height=2, font=("Arial",14),foreground="black",background="light blue")
 btn_close.grid(row=1,column=2)

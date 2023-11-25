@@ -49,6 +49,8 @@ def send_feedback():
         tmsg.showinfo('Feedback','Please Specify where it was wrong')
         tmsg.showinfo('Feedback','Email Me at studysadhu2022@gmail.com')
         webbrowser.open("www.gmail.com")
+        tmsg.showinfo('Feedback','Your Mail will be answered by us!')
+
 
 
 
